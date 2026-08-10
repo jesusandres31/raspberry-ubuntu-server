@@ -13,4 +13,4 @@ services:
     restart: unless-stopped
     volumes:
       - "${SHARE_DIR}:/media"
-    command: '-u "${SAMBA_USER};${SAMBA_PASSWORD}" -s "Compartido;/media;yes;no;no;${SAMBA_USER}"'
+    command: '-g "vfs objects = recycle" -u "${SAMBA_USER};${SAMBA_PASSWORD}" -s "Compartido;/media;yes;no;no;${SAMBA_USER}"'
